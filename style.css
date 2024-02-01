@@ -15,6 +15,25 @@ body {
     margin-top: .2%;
 }
 
+.card:hover .illumination {
+    width: 44.4%;
+    height: 70%;
+    position: absolute; 
+    margin-left: 40px;
+    margin-top: -520px;
+    pointer-events: none;
+    display: none; /* Initially hide the illumination */
+}
+
+.card:hover .illumination.active {
+    display: block; /* Show the illumination when active */
+    background: radial-gradient(
+        circle at var(--x) var(--y),
+        transparent 5%,
+        pink 50%
+    );
+}
+
 /* Add rounded corners to the top left and the top right corner of the image */
 .card img {
     border-radius: 5px 5px 0 0;
@@ -86,17 +105,3 @@ h4 {
         box-shadow: inset 0 0 5px rgba(0,0,0,.3) , 0 5px 0 #ccc , 0 15px 5px rgba(0,0,0,0);  
     }
 }
-
-.illumination {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    background: radial-gradient(
-        circle at var(--x) var(--y),
-        transparent 5%,
-        pink 50%
-    );
-} 
